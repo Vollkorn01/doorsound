@@ -4,7 +4,10 @@
     <div style="background-color: yellow;">
       <p>Motion Detected</p>
       <div>
-      Acceleration X: {{accelerationIncludingGravityX}}
+      Acceleration X: {{accelerationX}}
+      </div>
+      <div>
+        Acceleration Gravity X: {{accelerationIncludingGravityX}}
       </div>
       <div>
       Rotation X: {{rotationX}}
@@ -48,7 +51,8 @@ export default {
   data() {
     return {
       accelerationIncludingGravityX: 0,
-      rotationX:0,
+      rotationX: 0,
+      accelerationX: 0
     }
   },
   created() {
@@ -58,7 +62,8 @@ export default {
     handleMotion(event) {
       console.log('Motion detected')
       this.accelerationIncludingGravityX = Math.round(event.accelerationIncludingGravity.x * 10) / 10;
-      this.rotationX = Math.round(event.rotation.x * 10) / 10;
+      this.accelerationX = Math.round(event.acceleration.x * 10) / 10;
+      this.rotationX = Math.round(event.rotationRate.x * 10) / 10;
     }
   }
 }
