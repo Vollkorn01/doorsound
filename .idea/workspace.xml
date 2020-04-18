@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dfa4ddba-a584-4b79-b364-78d7c4460ae4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/947ebdd537b238217cf8c8b8bd232bc7.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/947ebdd537b238217cf8c8b8bd232bc7.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/33831cefb92097f81eea194ef609a60b.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/33831cefb92097f81eea194ef609a60b.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/3852cb2b557c0000e6934d1e7da413f7.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/3852cb2b557c0000e6934d1e7da413f7.json" afterDir="false" />
@@ -47,7 +48,7 @@
       <workItem from="1587214366570" duration="58000" />
       <workItem from="1587214593019" duration="44000" />
       <workItem from="1587214644669" duration="898000" />
-      <workItem from="1587217264404" duration="43000" />
+      <workItem from="1587217264404" duration="354000" />
     </task>
     <servers />
   </component>

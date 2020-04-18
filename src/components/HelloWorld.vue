@@ -46,12 +46,12 @@ export default {
     }
   },
   created() {
-    window.addEventListener("devicemotion", this.handleMotion, true);
+    window.addEventListener("devicemotion", this.handleMotion(event), true);
   },
   methods: {
-    handleMotion() {
+    handleMotion(event) {
       console.log('Motion detected')
-      this.motionDetected +=1;
+      this.motionDetected = event.accelerationIncludingGravity.x;
     }
   }
 }
