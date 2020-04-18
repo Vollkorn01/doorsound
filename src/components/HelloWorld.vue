@@ -1,8 +1,9 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <div v-if="motionDetected" style="background-color: yellow;">
+    <div style="background-color: yellow;">
       <p>Motion Detected</p>
+      {{motionDetected}}
     </div>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
@@ -41,7 +42,7 @@ export default {
   },
   data() {
     return {
-        motionDetected: false,
+        motionDetected: 0,
     }
   },
   created() {
@@ -50,7 +51,7 @@ export default {
   methods: {
     handleMotion() {
       console.log('Motion detected')
-      this.motionDetected = true;
+      this.motionDetected +=1;
     }
   }
 }
