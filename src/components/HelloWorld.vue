@@ -46,7 +46,7 @@ export default {
     }
   },
   created() {
-    window.addEventListener("devicemotion", this.handleMotion(event), true);
+    window.addEventListener("devicemotion", this.handleMotion, true);
   },
   methods: {
     handleMotion(event) {
