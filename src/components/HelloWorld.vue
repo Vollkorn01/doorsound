@@ -3,7 +3,12 @@
     <h1>{{ msg }}</h1>
     <div style="background-color: yellow;">
       <p>Motion Detected</p>
-      {{motionDetected}}
+      <div>
+      Acceleration X: {{accelerationIncludingGravityX}}
+      </div>
+      <div>
+      Rotation X: {{rotationX}}
+      </div>
     </div>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
@@ -42,7 +47,8 @@ export default {
   },
   data() {
     return {
-        motionDetected: 0,
+      accelerationIncludingGravityX: 0,
+      rotationX:0,
     }
   },
   created() {
@@ -51,7 +57,8 @@ export default {
   methods: {
     handleMotion(event) {
       console.log('Motion detected')
-      this.motionDetected = event.accelerationIncludingGravity.x;
+      this.accelerationIncludingGravityX = Math.round(event.accelerationIncludingGravity.x * 10) / 10;
+      this.rotationX = Math.round(event.rotation.x * 10) / 10;
     }
   }
 }
