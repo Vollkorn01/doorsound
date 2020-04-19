@@ -4,13 +4,7 @@
     <div style="background-color: yellow;">
       <p>Motion Detected</p>
       <div>
-        Acceleration X: {{accelerationX}}
-      </div>
-      <div>
-        Acceleration Gravity X: {{accelerationIncludingGravityX}}
-      </div>
-      <div>
-        Rotation X: {{rotationX}}
+        Acceleration Z: {{accelerationZ}}
       </div>
       {{playingSoundText}}
       <button @click.prevent="handleMotion(event)">Play Sound</button>
@@ -52,16 +46,14 @@ export default {
   },
   data() {
     return {
-      accelerationIncludingGravityX: 0,
-      rotationX: 0,
-      accelerationX: 0,
+      accelerationZ: 0,
       soundIsPlaying: false,
       playingSoundText: 'not playing sound',
       audio: new Audio('http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3'),
       event: {
         acceleration :
                 {
-                  x: 3
+                  z: 3
                 }
       },
     }
@@ -77,9 +69,8 @@ export default {
   methods: {
     handleMotion(event) {
       console.log('Motion detected')
-      this.accelerationX = Math.round(event.acceleration.x * 10) / 10;
-      console.log(this.accelerationX, this.soundIsPlaying)
-      if (this.accelerationX > 1 && !this.soundIsPlaying) {
+      this.accelerationZ = Math.round(event.acceleration.z * 10) / 10;
+      if (this.accelerationZ > 1 && !this.soundIsPlaying) {
         this.playingSoundText = 'playing sound'
         this.soundIsPlaying = true
         this.playSound()
