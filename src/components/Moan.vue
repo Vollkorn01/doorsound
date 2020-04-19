@@ -33,12 +33,18 @@ export default {
     }
   },
   created() {
-    window.addEventListener("devicemotion", this.handleMotion, true);
-    this.audio.addEventListener("ended", function(){
-      console.log("ended");
-      this.playingSoundText = 'not playing sound'
-      this.soundIsPlaying = false
-    }.bind(this));
+    /*
+    3 sec timeout before activating motion
+    provides time to play sound manually (otherwise sound won't get activated'
+     */
+    setTimeout(function(){
+      window.addEventListener("devicemotion", this.handleMotion, true);
+      this.audio.addEventListener("ended", function(){
+        console.log("ended");
+        this.playingSoundText = 'not playing sound'
+        this.soundIsPlaying = false
+      }.bind(this));
+    }.bind(this), 3000);
   },
   methods: {
     /*
