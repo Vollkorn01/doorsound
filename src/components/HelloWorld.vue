@@ -12,6 +12,8 @@
       <div>
         Rotation X: {{rotationX}}
       </div>
+      {{playingSoundText}}
+      <button @click.prevent="handleMotion(event)">Play Sound</button>
     </div>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
@@ -52,28 +54,39 @@ export default {
     return {
       accelerationIncludingGravityX: 0,
       rotationX: 0,
-      accelerationX: 0
+      accelerationX: 0,
+      soundIsPlaying: false,
+      playingSoundText: 'not playing sound',
+      audio: new Audio('http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3'),
+      event: {
+        acceleration :
+                {
+                  x: 3
+                }
+      },
     }
   },
   created() {
     window.addEventListener("devicemotion", this.handleMotion, true);
+    this.audio.addEventListener("ended", function(){
+      console.log("ended");
+      this.playingSoundText = 'not playing sound'
+      this.soundIsPlaying = false
+    }.bind(this));
   },
   methods: {
     handleMotion(event) {
       console.log('Motion detected')
-      this.accelerationIncludingGravityX = Math.round(event.accelerationIncludingGravity.x * 10) / 10;
       this.accelerationX = Math.round(event.acceleration.x * 10) / 10;
-      this.rotationX = Math.round(event.rotationRate.x * 10) / 10;
-
-      if (this.accelerationIncludingGravityX > 2) {
-        this.playSound('http://soundbible.com/mp3/Air')
+      console.log(this.accelerationX, this.soundIsPlaying)
+      if (this.accelerationX > 1 && !this.soundIsPlaying) {
+        this.playingSoundText = 'playing sound'
+        this.soundIsPlaying = true
+        this.playSound()
       }
     },
-    playSound (sound) {
-      if(sound) {
-        const audio = new Audio(sound);
-        audio.play();
-      }
+    playSound () {
+        this.audio.play();
     }
   }
 }
