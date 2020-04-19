@@ -7,7 +7,9 @@
         Acceleration Z: {{accelerationZ}}
       </div>
       {{playingSoundText}}
-      <button @click.prevent="handleMotion(event)">Play Test Sound</button>
+      <button @click.prevent="playSoundRestart()">Start</button>
+      <button @click.prevent="handleMotion(event)">Simulate Motion</button>
+
     </div>
   </div>
 </template>
@@ -59,6 +61,10 @@ export default {
     setTimeout( function () {
       window.addEventListener("devicemotion", this.handleMotion, true);
     }.bind(this), 3000);
+
+    /*
+     for each mp3, set 'soundIsPlaying' to false, so audios don't play over each other
+     */
     this.squeak_yes.addEventListener("ended", function(){
       console.log("ended");
       this.playingSoundText = 'not playing sound'
@@ -155,7 +161,10 @@ export default {
       this.soundIsPlaying = false
     }.bind(this));
 
-
+    // reset audio every 4 minutes
+    window.setInterval(function () {
+      this.counter = 0
+    }.bind(this), 240000);
   },
   methods: {
     /*
@@ -172,49 +181,55 @@ export default {
       }
     },
     /*
-      playing moan sounds one after the other
+      play test sound to enable sound and restart the counter
      */
+    playSoundRestart () {
+      this.counter = 0
+      this.oh_yes.play()
+    },
+    /*
+      playing moan sounds one after the other
+    */
     playSound () {
       console.log('playingSound', this.counter)
         switch (this.counter) {
             case 0: this.squeak_yes.play()
-                console.log('plaing squeak')
                 break
             case 1: this.moan_mmh_yes.play()
                 break
-            case 2: this.oh_yes.play()
-                break
-            case 3: this.moan_aaah_likethat.play()
+/*            case 2: this.oh_yes.play()
+                break*/
+ /*           case 3: this.moan_aaah_likethat.play()
                 break
             case 4:this.moan_yes_touchme.play()
+                break*/
+            case 2: this.moan_yes_grabmyhandle.play()
                 break
-            case 5: this.moan_yes_grabmyhandle.play()
+/*            case 6: this.moan_shake_me.play()
+                break*/
+            case 3: this.moan_yes_exactlylikethat.play()
                 break
-            case 6: this.moan_shake_me.play()
+            case 4: this.moan_faster_1.play()
                 break
-            case 7: this.moan_yes_exactlylikethat.play()
+            case 5: this.moan_faster_2.play()
                 break
-            case 8: this.moan_faster_1.play()
-                break
-            case 9: this.moan_faster_2.play()
-                break
-            case 10: this.moan_moan.play()
+/*            case 10: this.moan_moan.play()
                 break
             case 11: this.moan_yes.play()
+                break*/
+            case 6: this.moan_yes_high.play()
                 break
-            case 12: this.moan_yes_high.play()
+            case 7: this.moan_high.play()
                 break
-            case 13: this.moan_high.play()
+/*            case 14: this.moan_higher.play()
+                break*/
+/*            case 8: this.moan_highest.play()
+                break*/
+            case 8: this.moan_orgasm.play()
                 break
-            case 14: this.moan_higher.play()
-                break
-            case 15: this.moan_highest.play()
-                break
-            case 16: this.moan_orgasm.play()
-                break
-            case 17: this.moan_afterorgasm.play()
-                break
-            case 18: this.desinfect.play()
+/*            case 17: this.moan_afterorgasm.play()
+                break*/
+            case 9: this.desinfect.play()
                   this.counter = 0
             break
         }
