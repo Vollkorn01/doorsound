@@ -41,15 +41,21 @@ export default {
     }.bind(this));
   },
   methods: {
+    /*
+    Gets called when device moves
+     */
     handleMotion(event) {
       console.log('Motion detected')
       this.accelerationZ = Math.round(event.acceleration.z * 10) / 10;
-      if ((this.accelerationZ > 1 || this.accelerationZ < -1) && !this.soundIsPlaying) {
+      if ((this.accelerationZ > 0.3 || this.accelerationZ < -0.3) && !this.soundIsPlaying) {
         this.playingSoundText = 'playing sound'
         this.soundIsPlaying = true
         this.playSound()
       }
     },
+    /*
+    playing the moan sound
+     */
     playSound () {
         this.audio.play();
     }
