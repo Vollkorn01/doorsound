@@ -49,7 +49,7 @@ export default {
       accelerationZ: 0,
       soundIsPlaying: false,
       playingSoundText: 'not playing sound',
-      audio: new Audio('http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3'),
+      audio: new Audio(require('../assets/moan_1.mp3')),
       event: {
         acceleration :
                 {
@@ -70,7 +70,7 @@ export default {
     handleMotion(event) {
       console.log('Motion detected')
       this.accelerationZ = Math.round(event.acceleration.z * 10) / 10;
-      if (this.accelerationZ > 1 && !this.soundIsPlaying) {
+      if ((this.accelerationZ > 1 || this.accelerationZ < -1) && !this.soundIsPlaying) {
         this.playingSoundText = 'playing sound'
         this.soundIsPlaying = true
         this.playSound()

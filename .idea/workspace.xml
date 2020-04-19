@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="dfa4ddba-a584-4b79-b364-78d7c4460ae4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/947ebdd537b238217cf8c8b8bd232bc7.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/947ebdd537b238217cf8c8b8bd232bc7.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/33831cefb92097f81eea194ef609a60b.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/33831cefb92097f81eea194ef609a60b.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/3852cb2b557c0000e6934d1e7da413f7.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/3852cb2b557c0000e6934d1e7da413f7.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/6a5622dd800226b25aaacf320f393e0c.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/6a5622dd800226b25aaacf320f393e0c.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/cc9cfce5bcb346c12ac7a72e749fa168.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/cc9cfce5bcb346c12ac7a72e749fa168.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/dd3c2dbd86674e1069cf78d9fb3d9643.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/dd3c2dbd86674e1069cf78d9fb3d9643.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/HelloWorld.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HelloWorld.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,11 +28,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -43,7 +56,7 @@
       <workItem from="1587214366570" duration="58000" />
       <workItem from="1587214593019" duration="44000" />
       <workItem from="1587214644669" duration="898000" />
-      <workItem from="1587217264404" duration="3856000" />
+      <workItem from="1587217264404" duration="4692000" />
     </task>
     <servers />
   </component>
@@ -61,5 +74,11 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="458" y="173" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587293172798">
+      <screen x="0" y="23" width="1440" height="795" />
+    </state>
+    <state x="458" y="173" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.795@0.23.1440.795" timestamp="1587293172798" />
   </component>
 </project>
