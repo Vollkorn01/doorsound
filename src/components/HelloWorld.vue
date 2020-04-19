@@ -4,13 +4,13 @@
     <div style="background-color: yellow;">
       <p>Motion Detected</p>
       <div>
-      Acceleration X: {{accelerationX}}
+        Acceleration X: {{accelerationX}}
       </div>
       <div>
         Acceleration Gravity X: {{accelerationIncludingGravityX}}
       </div>
       <div>
-      Rotation X: {{rotationX}}
+        Rotation X: {{rotationX}}
       </div>
     </div>
     <p>
@@ -64,6 +64,16 @@ export default {
       this.accelerationIncludingGravityX = Math.round(event.accelerationIncludingGravity.x * 10) / 10;
       this.accelerationX = Math.round(event.acceleration.x * 10) / 10;
       this.rotationX = Math.round(event.rotationRate.x * 10) / 10;
+
+      if (this.accelerationIncludingGravityX > 2) {
+        this.playSound('http://soundbible.com/mp3/Air')
+      }
+    },
+    playSound (sound) {
+      if(sound) {
+        const audio = new Audio(sound);
+        audio.play();
+      }
     }
   }
 }
