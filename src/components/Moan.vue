@@ -23,7 +23,26 @@ export default {
       accelerationZ: 0,
       soundIsPlaying: false,
       playingSoundText: 'not playing sound',
-      audio: new Audio(require('../assets/moan_1.mp3')),
+      counter: 0,
+      squeak_yes: new Audio(require('../assets/squeak-yes.mp3')),
+      moan_mmh_yes: new Audio(require('../assets/moan-mmh-yes.mp3')),
+      oh_yes: new Audio(require('../assets/oh-yes.mp3')),
+      moan_aaah_likethat: new Audio(require('../assets/moan-aaah-likethat.mp3')),
+      moan_yes_touchme: new Audio(require('../assets/moan-yes-touchme.mp3')),
+      moan_yes_grabmyhandle: new Audio(require('../assets/moan-yes-grabmyhandle.mp3')),
+      moan_shake_me: new Audio(require('../assets/moan-shake-me.mp3')),
+      moan_yes_exactlylikethat: new Audio(require('../assets/moan-yes-exactlylikethat.mp3')),
+      moan_faster_1: new Audio(require('../assets/moan-faster-1.mp3')),
+      moan_faster_2: new Audio(require('../assets/moan-faster-2.mp3')),
+      moan_moan: new Audio(require('../assets/moan-moan.mp3')),
+      moan_yes: new Audio(require('../assets/moan-yes.mp3')),
+      moan_yes_high: new Audio(require('../assets/moan-yes-high.mp3')),
+      moan_high: new Audio(require('../assets/moan-high.mp3')),
+      moan_higher: new Audio(require('../assets/moan-higher.mp3')),
+      moan_highest: new Audio(require('../assets/moan-highest.mp3')),
+      moan_orgasm: new Audio(require('../assets/moan-orgasm.mp3')),
+      desinfect: new Audio(require('../assets/desinfect.mp3')),
+      moan_afterorgasm: new Audio(require('../assets/moan-afterorgasm.mp3')),
       event: {
         acceleration :
                 {
@@ -37,14 +56,106 @@ export default {
     3 sec timeout before activating motion
     provides time to play sound manually (otherwise sound won't get activated'
      */
-    setTimeout(function(){
+    setTimeout( function () {
       window.addEventListener("devicemotion", this.handleMotion, true);
-      this.audio.addEventListener("ended", function(){
-        console.log("ended");
-        this.playingSoundText = 'not playing sound'
-        this.soundIsPlaying = false
-      }.bind(this));
     }.bind(this), 3000);
+    this.squeak_yes.addEventListener("ended", function(){
+      console.log("ended");
+      this.playingSoundText = 'not playing sound'
+      this.soundIsPlaying = false
+    }.bind(this));
+    this.moan_mmh_yes.addEventListener("ended", function(){
+      console.log("ended");
+      this.playingSoundText = 'not playing sound'
+      this.soundIsPlaying = false
+    }.bind(this));
+    this.oh_yes.addEventListener("ended", function(){
+      console.log("ended");
+      this.playingSoundText = 'not playing sound'
+      this.soundIsPlaying = false
+    }.bind(this));
+    this.moan_aaah_likethat.addEventListener("ended", function(){
+      console.log("ended");
+      this.playingSoundText = 'not playing sound'
+      this.soundIsPlaying = false
+    }.bind(this));
+    this.moan_yes_touchme.addEventListener("ended", function(){
+      console.log("ended");
+      this.playingSoundText = 'not playing sound'
+      this.soundIsPlaying = false
+    }.bind(this));
+    this.moan_yes_grabmyhandle.addEventListener("ended", function(){
+      console.log("ended");
+      this.playingSoundText = 'not playing sound'
+      this.soundIsPlaying = false
+    }.bind(this));
+    this.moan_shake_me.addEventListener("ended", function(){
+      console.log("ended");
+      this.playingSoundText = 'not playing sound'
+      this.soundIsPlaying = false
+    }.bind(this));
+    this.moan_yes_exactlylikethat.addEventListener("ended", function(){
+      console.log("ended");
+      this.playingSoundText = 'not playing sound'
+      this.soundIsPlaying = false
+    }.bind(this));
+    this.moan_faster_1.addEventListener("ended", function(){
+      console.log("ended");
+      this.playingSoundText = 'not playing sound'
+      this.soundIsPlaying = false
+    }.bind(this));
+    this.moan_faster_2.addEventListener("ended", function(){
+      console.log("ended");
+      this.playingSoundText = 'not playing sound'
+      this.soundIsPlaying = false
+    }.bind(this));
+    this.moan_moan.addEventListener("ended", function(){
+      console.log("ended");
+      this.playingSoundText = 'not playing sound'
+      this.soundIsPlaying = false
+    }.bind(this));
+    this.moan_yes.addEventListener("ended", function(){
+      console.log("ended");
+      this.playingSoundText = 'not playing sound'
+      this.soundIsPlaying = false
+    }.bind(this));
+    this.moan_yes_high.addEventListener("ended", function(){
+      console.log("ended");
+      this.playingSoundText = 'not playing sound'
+      this.soundIsPlaying = false
+    }.bind(this));
+    this.moan_high.addEventListener("ended", function(){
+      console.log("ended");
+      this.playingSoundText = 'not playing sound'
+      this.soundIsPlaying = false
+    }.bind(this));
+    this.moan_higher.addEventListener("ended", function(){
+      console.log("ended");
+      this.playingSoundText = 'not playing sound'
+      this.soundIsPlaying = false
+    }.bind(this));
+    this.moan_highest.addEventListener("ended", function(){
+      console.log("ended");
+      this.playingSoundText = 'not playing sound'
+      this.soundIsPlaying = false
+    }.bind(this));
+    this.moan_orgasm.addEventListener("ended", function(){
+      console.log("ended");
+      this.playingSoundText = 'not playing sound'
+      this.soundIsPlaying = false
+    }.bind(this));
+    this.desinfect.addEventListener("ended", function(){
+      console.log("ended");
+      this.playingSoundText = 'not playing sound'
+      this.soundIsPlaying = false
+    }.bind(this));
+    this.moan_afterorgasm.addEventListener("ended", function(){
+      console.log("ended");
+      this.playingSoundText = 'not playing sound'
+      this.soundIsPlaying = false
+    }.bind(this));
+
+
   },
   methods: {
     /*
@@ -57,13 +168,56 @@ export default {
         this.playingSoundText = 'playing sound'
         this.soundIsPlaying = true
         this.playSound()
+        this.counter += 1
       }
     },
     /*
-    playing the moan sound
+      playing moan sounds one after the other
      */
     playSound () {
-        this.audio.play();
+      console.log('playingSound', this.counter)
+        switch (this.counter) {
+            case 0: this.squeak_yes.play()
+                console.log('plaing squeak')
+                break
+            case 1: this.moan_mmh_yes.play()
+                break
+            case 2: this.oh_yes.play()
+                break
+            case 3: this.moan_aaah_likethat.play()
+                break
+            case 4:this.moan_yes_touchme.play()
+                break
+            case 5: this.moan_yes_grabmyhandle.play()
+                break
+            case 6: this.moan_shake_me.play()
+                break
+            case 7: this.moan_yes_exactlylikethat.play()
+                break
+            case 8: this.moan_faster_1.play()
+                break
+            case 9: this.moan_faster_2.play()
+                break
+            case 10: this.moan_moan.play()
+                break
+            case 11: this.moan_yes.play()
+                break
+            case 12: this.moan_yes_high.play()
+                break
+            case 13: this.moan_high.play()
+                break
+            case 14: this.moan_higher.play()
+                break
+            case 15: this.moan_highest.play()
+                break
+            case 16: this.moan_orgasm.play()
+                break
+            case 17: this.moan_afterorgasm.play()
+                break
+            case 18: this.desinfect.play()
+                  this.counter = 0
+            break
+        }
     }
   }
 }
